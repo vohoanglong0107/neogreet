@@ -1,0 +1,26 @@
+info:
+  template: |
+
+    [white::b]┌────────────────────────────────────────────┐
+      [green] : {{ .Product }}
+      [purple]󰍛 : {{ .CPU }}
+      [red]󰍹 : {{ .GPU }}
+      [blue] : {{ .OS }}
+      [pink]󰘚 : {{ .Memory }}
+      [yellow]󰋊 : {{ .Disk }}
+    [white]└────────────────────────────────────────────┘
+      [yellow]󰮯     [red]󰊠     [green]󰊠     [orange]󰊠     [blue]󰊠     [pink]󰊠     [purple]󰊠     [yellow]󰊠
+logo:
+  template: |
+    [blue::b]             .:dddl:.
+                OWMKOOXMWd
+               KMMc    xMMc
+               MMM.     WW:
+               MMM.
+        oxOOOo MMM0OOk.
+      0MMKxdd: MMMkddc.
+     XM0'      MMM.
+     MMo       MMW.
+     0MNc.   .xMMd
+      dNMWXXXWM0:
+        .:odl:.

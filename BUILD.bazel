@@ -1,0 +1,44 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+
+go_library(
+    name = "neogreet_lib",
+    srcs = [
+        "config.go",
+        "greeter.go",
+        "info.go",
+        "ipc.go",
+        "main.go",
+        "ui.go",
+    ],
+    importpath = "vohoanglong0107/monorepo/packages/neogreet",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_gdamore_tcell_v2//:tcell",
+        "@com_github_jaypipes_ghw//:ghw",
+        "@com_github_rivo_tview//:tview",
+        "@in_gopkg_yaml_v3//:yaml_v3",
+        "@org_golang_x_sys//unix",
+    ],
+)
+
+go_binary(
+    name = "neogreet",
+    embed = [":neogreet_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "neogreet_test",
+    size = "small",
+    srcs = [
+        "config_test.go",
+        "greeter_test.go",
+        "ipc_test.go",
+        "ui_test.go",
+    ],
+    embed = [":neogreet_lib"],
+    deps = [
+        "@com_github_stretchr_testify//mock",
+        "@com_github_stretchr_testify//require",
+    ],
+)
